@@ -1,21 +1,25 @@
+/*Animation keyframe*/
 @keyframes grow_fade {
     from {width: 25px; opacity: 0; }
     to {width: 475px; opacity: 1; }
 }
 
+/*Apply animation to logo img*/
 #logo {
     animation-name: grow_fade;
     animation-duration: 5s;
     animation-iteration-count: 1;
 } 
 
+/* Font and background image*/
 body {
     font-family: Poppins, serif;
     background: url(/images/concrete_seamless.png), #f1f1f1;
 }
 
 /*This is the flex ITEM for card class*/
-/*This is the flex CONTAINER for img and nav_links */
+/*Or its not a flex item?*/
+/*This is the flex CONTAINER for img and nav */
 header {
     display: flex;
     flex-flow: column wrap;
@@ -23,6 +27,7 @@ header {
     align-items: center;
 }
 
+/*This is hte flex CONTAINER for nav_item*/
 .nav_links {
     display: flex;
     flex-flow: column wrap;
@@ -35,9 +40,11 @@ header {
     border-radius: 50px 50px 0px 0px;
 }
 
+
+/*This is the flex ITEM for pricing class*/
+
 /*This is the flex CONTAINER for header, ul, and button */
 /*OR card class does not need to be a flex container?*/
-/*This is the flex ITEM for card class*/
 .card {
     flex-basis: 450px;
     border-radius: 50px 50px 0px 0px;
@@ -74,6 +81,7 @@ html {
         background: #f1f1f1;
     }
 
+/*This is the flex CONTAINER for img and nav */
     header {
         flex-flow: column nowrap;
     }
@@ -81,17 +89,20 @@ html {
     nav {
         width: 100%;
     }
-    
+
+/*This is hte flex CONTAINER for nav_item*/    
     .nav_links {
         flex-flow: row wrap;
         justify-content: space-around;
     }
 
+/*This is the flex CONTAINER for card class */
     .pricing {
         flex-wrap: nowrap;
         align-items: flex-end;
     }    
 
+/*This is the flex ITEM for pricing class*/
     .card {
         border: 2px solid #45ADDD;
         flex-basis: 325px;
@@ -107,6 +118,7 @@ html {
 }
 
 @media screen and (min-width: 900px) {
+/*This is the flex CONTAINER for img and nav */
     header {
         flex-flow: row wrap;
         justify-content: space-between;       
@@ -122,10 +134,12 @@ html {
         width: 100%;
     }
 
+/*This is the flex ITEM for pricing class*/
     .card {
         flex-basis: 275px;
     }
 
+/*This is the flex CONTAINER for card class */
     .pricing {
         flex-wrap: nowrap;
     }    
