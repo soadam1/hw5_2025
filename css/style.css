@@ -1,0 +1,143 @@
+@keyframes grow_fade {
+    from {width: 25px; opacity: 0; }
+    to {width: 475px; opacity: 1; }
+}
+
+#logo {
+    animation-name: grow_fade;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+} 
+
+body {
+    font-family: Poppins, serif;
+    background: url(/images/concrete_seamless.png), #f1f1f1;
+}
+
+/*This is the flex ITEM for card class*/
+/*This is the flex CONTAINER for img and nav_links */
+header {
+    display: flex;
+    flex-flow: column wrap;
+    /* align-content: center; */
+    align-items: center;
+}
+
+.nav_links {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.card > header {
+    background: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0px 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+/*This is the flex CONTAINER for header, ul, and button */
+/*OR card class does not need to be a flex container?*/
+/*This is the flex ITEM for card class*/
+.card {
+    flex-basis: 450px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+/*Extra Scroll animation*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*This is the flex CONTAINER for card class */
+.pricing {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#image1, #image2, #image3, #image4, #image5 {
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+@media print {
+    body {
+        font-family: arial, helvetica;
+        background: #f1f1f1;
+    }
+
+    header {
+        flex-flow: column nowrap;
+    }
+
+    nav {
+        width: 100%;
+    }
+    
+    .nav_links {
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .pricing {
+        flex-wrap: nowrap;
+        align-items: flex-end;
+    }    
+
+    .card {
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+    }
+
+    #gallery, .gallery {
+        display: none;
+    }
+
+    .card ul > li:nth-child(2):after {
+        content: "👍";
+    }
+}
+
+@media screen and (min-width: 900px) {
+    header {
+        flex-flow: row wrap;
+        justify-content: space-between;       
+    }
+
+    .nav_links {
+        flex-flow: row wrap;
+    }
+
+    body > header:first-of-type {
+        position: sticky;
+        top: 0px;
+        width: 100%;
+    }
+
+    .card {
+        flex-basis: 275px;
+    }
+
+    .pricing {
+        flex-wrap: nowrap;
+    }    
+}
+
+/*Remove animation and extra scroll behavior*/
+@media screen and (prefers-reduced-motion: reduce) {
+    html{
+        scroll-behavior: auto;
+    }
+    #logo {
+        animation-name: none;
+    }
+}
+
