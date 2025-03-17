@@ -82,6 +82,9 @@ html {
     }
 
 /*This is the flex CONTAINER for img and nav */
+/*!!!justify-content is not being over ridden in print!!!*/
+/*If I order with print first, then on chrome inspect print view is slightly better
+but has no effect on the actual print view*/
     header {
         flex-flow: column nowrap;
     }
@@ -90,7 +93,8 @@ html {
         width: 100%;
     }
 
-/*This is hte flex CONTAINER for nav_item*/    
+/*This is hte flex CONTAINER for nav_item*/
+/**/    
     .nav_links {
         flex-flow: row wrap;
         justify-content: space-around;
@@ -119,6 +123,7 @@ html {
 
 @media screen and (min-width: 900px) {
 /*This is the flex CONTAINER for img and nav */
+/*!!!justify-content is not being over ridden in print!!!*/
     header {
         flex-flow: row wrap;
         justify-content: space-between;       
